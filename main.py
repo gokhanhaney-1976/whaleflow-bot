@@ -84,9 +84,7 @@ def analyze_symbol(symbol):
         pass
 
 def main():
-    # TEST MESAJI: Bağlantıyı kontrol etmek için her tarama başında mesaj gönderir
-    send_telegram("🧪 *WhaleFlow Bot Test Mesajı:* Bot bulutta sorunsuz çalışıyor, sinyal taraması başladı!")
-    
+       
     symbols = get_futures_symbols()
     print(f"Toplam {len(symbols)} adet vadeli coin taranıyor...")
     for sym in symbols:
