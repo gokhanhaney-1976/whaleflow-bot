@@ -1,0 +1,24 @@
+name: WhaleFlow Scanner
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Her 15 dakikada bir otomatik çalışır
+  workflow_dispatch:        # Elle çalıştırma butonu ekler
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu Çek
+        uses: actions/checkout@v3
+
+      - name: Python Kur
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Kütüphaneleri Kur
+        run: pip install requests numpy
+
+      - name: Taramayı Başlat
+        run: python main.py
